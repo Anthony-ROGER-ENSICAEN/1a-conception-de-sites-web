@@ -46,3 +46,11 @@ body {
 	transform: rotate(180deg);
 	transition: transform 1s;
 }
+
+.rectangle {
+	border-left: 15px solid transparent;
+	width: 0;
+	border-bottom: 15px solid gold;
+	transform: rotate(-45deg);
+	margin-left: -5px;
+}
