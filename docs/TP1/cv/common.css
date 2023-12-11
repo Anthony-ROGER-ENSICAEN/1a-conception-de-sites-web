@@ -1,0 +1,54 @@
+button,
+input[type="submit"],
+input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.company::before,
+.school::before {
+	content: "@";
+	padding-right: 3px;
+}
+
+.company,
+.school {
+	font-variant: small-caps;
+}
+
+time {
+	display: inline-block;
+	padding: 15px;
+}
+
+h1 {
+	width: fit-content;
+	margin: auto;
+	border: 1px black solid;
+	padding: 5px;
+}
+
+nav {
+	width: 100%;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	border-bottom: 3px groove;
+}
+
+nav *:first-child {
+	padding-left: 7px;
+}
+
+.style-selector {
+	width: fit-content;
+	padding: 5px 0 0 5px;
+}
+
+.style-selector:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.style-selector:active {
+	background-color: aquamarine;
+}
+
+.style-selector:focus {
+	background-color: red;
+}
