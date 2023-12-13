@@ -47,10 +47,25 @@ body {
 	transition: transform 1s;
 }
 
+div {
+	border: 1px solid black;
+}
+
 .rectangle {
+	border-color: transparent;
 	border-left: 15px solid transparent;
 	width: 0;
 	border-bottom: 15px solid gold;
 	transform: rotate(-45deg);
 	margin-left: -5px;
+}
+
+.circle {
+	border-color: transparent;
+	background: radial-gradient(#e66465, #9198e5);
+	width: 70px;
+	height: 70px;
+	border: 3px solid black;
+	border-radius: 100%;
+	margin-left: 15px;
 }
