@@ -41,17 +41,26 @@ body {
 }
 
 
+.testy.rotate {
+	transform: rotate(0deg);
+	transition: transform 1s;
+}
 
 .testy.rotate:hover {
 	transform: rotate(180deg);
 	transition: transform 1s;
 }
 
-div {
-	border: 1px solid black;
+.summary * {
+	border: 2px solid green;
+	display: inline-block;
 }
 
-.rectangle {
+.summary {
+	border: 2px solid black;
+}
+
+.triangle {
 	border-color: transparent;
 	border-left: 15px solid transparent;
 	width: 0;
@@ -68,4 +77,22 @@ div {
 	border: 3px solid black;
 	border-radius: 100%;
 	margin-left: 15px;
+}
+
+.menu {
+	width: fit-content;
+	padding: 20px;
+	pointer-events: none;
+}
+
+#flag {
+	pointer-events: auto;
+}
+
+.menu:hover {
+	border-color: red;
+}
+
+.tri {
+	border: 1px solid black;
 }

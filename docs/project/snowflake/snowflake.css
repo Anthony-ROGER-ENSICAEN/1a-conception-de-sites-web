@@ -1,0 +1,38 @@
+.snowflake {
+	background: radial-gradient(circle at center, white, transparent);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.snowflake {
+	position: absolute;
+	color: white;
+	animation: falling infinite ease-in-out, vanish infinite ease-in-out;
+	animation-duration: 10s;
+	top: 0;
+	left: 0;
+}
+
+@keyframes falling {
+
+	0% {
+		transform: translate(0px, 0vh);
+	}
+
+	100% {
+		top: 100%;
+		transform: translate(10px, 100vh);
+	}
+}
+
+@keyframes vanish {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}

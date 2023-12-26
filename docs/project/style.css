@@ -1,0 +1,13 @@
+.canvas {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/18/Neige_et_lumi%C3%A8re_dans_la_for%C3%AAt.jpg");
+	background-size: cover;
+	background-position: 100% 85%;
+}
+
+.persona {
+	z-index: 80;
+	width: 25%;
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+}

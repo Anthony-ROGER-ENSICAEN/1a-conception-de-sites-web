@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Animations</title>
+	<script src="snowflake/snowflake.js"></script>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="canvas">
+		<img class="persona" alt="cerf" src="580b57fbd9996e24bc43bbb9.png">
+		<ar-snowflake class="falling" repeat="1000"></ar-snowflake>
+	</div>
+	<script src="libs/microsass.js"></script>
+	<script>
+		microsass.import(["./style.scss"]);
+	</script>
+	<script src="libs/repeat.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			repeat();
+		})
+	</script>
+</body>
+
+</html>
