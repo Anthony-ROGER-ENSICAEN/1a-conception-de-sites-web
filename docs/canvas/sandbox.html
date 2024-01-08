@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Projet Conception Site Web - 1A Info</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="tools/normalize.css" />
+	<style type="text/css">
+		* {
+			text-align: center;
+		}
+
+		#canvanim {
+			width: 512px;
+			height: 256px;
+			border-width: 2px;
+			border-style: solid;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#stop_clic:hover {
+			font-variant: small-caps;
+			cursor: pointer;
+		}
+	</style>
+	<script src="tools/sprites.js"></script>
+</head>
+
+<body onload="animation();">
+	<div class="canva" style="padding: 40px;">
+		<canvas id="canvanim" width="512" height="256">
+			Ne supporte pas canvas.
+		</canvas>
+	</div>
+	<div id="msg">Msg</div>
+	<div id="stop_clic">Start/Stop</div>
+	<div id="clear">clear</div>
+	<script>
+		function log(msg) {
+			document.getElementById("msg").innerText += msg;
+		}
+
+		class Sheep {
+			constructor(context) {
+				this.context = context;
+				this.image = new Image();
+				this.image.src = 'images/sheeppoe.png';
+				this.tileW = 40;
+				this.tileH = 40;
+				this.x = 0;
+				this.y = 0;
+			}
+
+
+			showTile(i) {
+				var x = i % 16;
+				var y = Math.floor(i / 16);
+				this.context.drawImage(
+					this.image,
+					0 + x * this.tileW,
+					0 + y * this.tileH,
+					this.tileW,
+					this.tileH,
+					this.x,
+					this.y,
+					this.tileW,
+					this.tileH
+				);
+			}
+
+			moveTo(x, y) {
+				this.x = x;
+				this.y = y;
+			}
+
+			animate() {
+				var thisSheep = this;
+				var i = 0;
+				this.animId = setInterval(function () {
+					if (i === 8 * 16) {
+						i = 0;
+					}
+					thisSheep.showTile(i++);
+				}, 1000 / 24 * 4
+				);
+			}
+		}
+
+		function animation() {
+			var canvas = document.getElementById("canvanim");
+			var context = canvas.getContext("2d");
+			var sheep1 = new Sheep(context);
+			sheep1.animate();
+			var sheep2 = new Sheep(context);
+			sheep2.moveTo(50, 50)
+			sheep2.animate();
+			var sheep3 = new Sheep(context);
+			sheep3.moveTo(100, 0)
+			sheep3.animate();
+		}
+
+
+
+		// Animation basique
+
+		// lier stop_clic à l'animation
+
+	</script>
+</body>
+
+</html>

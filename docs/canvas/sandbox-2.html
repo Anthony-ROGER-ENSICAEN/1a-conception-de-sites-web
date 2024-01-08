@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Projet Conception Site Web - 1A Info</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="tools/normalize.css" />
+	<style type="text/css">
+		* {
+			text-align: center;
+		}
+
+		#canvanim {
+			width: 512px;
+			height: 256px;
+			border-width: 2px;
+			border-style: solid;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#stop_clic:hover {
+			font-variant: small-caps;
+			cursor: pointer;
+		}
+
+		body {
+			border: 3px solid green;
+		}
+
+		#demo {
+			border: 3px solid red;
+		}
+	</style>
+	<script src="tools/sprites.js"></script>
+</head>
+
+<body onload="animation();">
+	<div id="demo">Demo div</div>
+	<script>
+
+		function animation() {
+			function appendP(placeholder, text) {
+				placeholder.innerHTML += "<p>" + text + "</p>";
+			}
+
+			appendP(document.body, "text1");
+			appendP(document.body, "text2");
+			appendP(document.getElementById("demo"), "text2");
+
+			class PAppender {
+				constructor(placeholder) {
+					this.placeholder = placeholder;
+				}
+
+				append(text) {
+					this.placeholder.innerHTML += "<p>" + text + "</p>";
+				}
+			}
+
+			var demo = new PAppender(document.getElementById("demo"))
+			demo.append("class1")
+		}
+
+	</script>
+</body>
+
+</html>
