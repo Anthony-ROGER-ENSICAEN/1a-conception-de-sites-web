@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title>Projet Conception Site Web - 1A Info</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="tools/normalize.css">
+	<style>
+		* {
+			text-align: center;
+		}
+
+		.canva {
+			width: 512px;
+			height: 256px;
+			border-width: 2px;
+			border-style: solid;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#stop_clic:hover {
+			font-variant: small-caps;
+			cursor: pointer;
+		}
+	</style>
+	<script src="tools/sprites.js"></script>
+</head>
+
+<body>
+	<h1>TP3-1</h1>
+	<div class="canva">
+		<canvas id="canvaimage" width="512" height="256">
+			Ne supporte pas canvas.
+		</canvas>
+	</div>
+	<div id="stop_clic">Start/Stop</div>
+	<script>
+
+		var image = new Image();
+		image.src = 'images/paysage.jpg';
+
+		image.addEventListener('load', imageLoaded, false);
+		function imageLoaded(evt) {
+			var cv = document.getElementById("canvaimage");
+			var ctx = cv.getContext("2d");
+			var x = 0;
+			var y = 0;
+			ctx.drawImage(image, x, y);
+			var context = ctx;
+			context.fillStyle = 'red';
+			context.fillRect(75, 75, 300, 150);
+			context.font = '25px Verdana';
+
+			setInterval(function () {
+				context.fillStyle = "rgb(" +
+					Math.floor(Math.random() * 255) +
+					", " +
+					Math.floor(Math.random() * 255) +
+					", " +
+					Math.floor(Math.random() * 255) +
+					")";
+				context.fillRect(75, 75, 300, 150);
+			}, 1000);
+		}
+	</script>
+</body>
+
+</html>
